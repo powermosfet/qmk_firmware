@@ -94,9 +94,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   
   [_SYMBOLS] = LAYOUT_reviung41(
     KC_HASH,  KC_EXLM,  KC_AT,    KC_LCBR,  KC_RCBR,   KC_GRAVE,           KC_QUOT,  KC_7,     KC_8,     KC_9,     KC_PAST,  _______,
-    KC_SCLN,  KC_AMPR,  KC_DLR,   KC_LPRN,  KC_RPRN,   KC_PIPE,            KC_COLN,  KC_4,     KC_5,     KC_6,     KC_PPLS,  KC_PMNS,
+    KC_SCLN,  KC_AMPR,  KC_DLR,   KC_LPRN,  KC_RPRN,   KC_PIPE,            KC_COLN,  KC_4,     KC_5,     KC_6,     KC_PPLS,  KC_MINS,
     _______,  KC_PERC,  KC_CIRC,  KC_LBRC,  KC_RBRC,   KC_TILD,            KC_DQUO,  KC_1,     KC_2,     KC_3,     _______,  KC_EQL,
-                                            _______,   _______,  _______,  FN,       _______
+                                            _______,   _______,  _______,  FN,       KC_0  
   ),
   
   [_ARROWS] = LAYOUT_reviung41(

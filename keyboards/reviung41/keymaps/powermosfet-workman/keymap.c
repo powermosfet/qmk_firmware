@@ -38,43 +38,34 @@ enum custom_keycodes {
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-    case LEFT:
-        if (record->event.pressed) {
+    if (record->event.pressed) {
+        switch (keycode) {
+        case LEFT:
             SEND_STRING("<-");
-        }
-        break;
+            break;
 
-    case RIGHT:
-        if (record->event.pressed) {
+        case RIGHT:
             SEND_STRING("->");
-        }
-        break;
+            break;
 
-    case LPIZZA:
-        if (record->event.pressed) {
+        case LPIZZA:
             SEND_STRING("<|");
-        }
-        break;
+            break;
 
-    case RPIZZA:
-        if (record->event.pressed) {
+        case RPIZZA:
             SEND_STRING("|>");
-        }
-        break;
+            break;
 
-    case RBIND:
-        if (record->event.pressed) {
+        case RBIND:
             SEND_STRING("=<<");
-        }
-        break;
+            break;
 
-    case LBIND:
-        if (record->event.pressed) {
+        case LBIND:
             SEND_STRING(">>=");
+            break;
         }
-        break;
     }
+
     return true;
 };
 

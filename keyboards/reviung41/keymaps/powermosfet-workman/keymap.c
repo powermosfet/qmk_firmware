@@ -41,42 +41,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
     case LEFT:
         if (record->event.pressed) {
-            // when keycode QMKBEST is pressed
             SEND_STRING("<-");
         }
         break;
 
     case RIGHT:
         if (record->event.pressed) {
-            // when keycode QMKBEST is pressed
             SEND_STRING("->");
         }
         break;
 
     case LPIZZA:
         if (record->event.pressed) {
-            // when keycode QMKBEST is pressed
             SEND_STRING("<|");
         }
         break;
 
     case RPIZZA:
         if (record->event.pressed) {
-            // when keycode QMKBEST is pressed
             SEND_STRING("|>");
         }
         break;
 
     case RBIND:
         if (record->event.pressed) {
-            // when keycode QMKBEST is pressed
             SEND_STRING("=<<");
         }
         break;
 
     case LBIND:
         if (record->event.pressed) {
-            // when keycode QMKBEST is pressed
             SEND_STRING(">>=");
         }
         break;

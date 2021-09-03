@@ -105,16 +105,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   
   [_ARROWS] = LAYOUT_reviung41(
-    _______,  _______,  _______,  _______,  _______,   _______,            KC_HOME,  KC_PGUP,  KC_UP,    KC_PGDN,  KC_END,   KC_VOLU,
-    _______,  _______,  _______,  _______,  _______,   _______,            KC_INS,   KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_DEL,   KC_VOLD,
-    _______,  _______,  _______,  _______,  _______,   _______,            _______,  KC_MPRV,  KC_MPLY,  KC_MNXT,  _______,  KC_MUTE,
+    _______,  _______,  _______,  LEFT,     RIGHT,     _______,            KC_HOME,  KC_PGUP,  KC_UP,    KC_PGDN,  KC_END,   KC_VOLU,
+    _______,  _______,  _______,  LPIZZA,   RPIZZA,    _______,            KC_INS,   KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_DEL,   KC_VOLD,
+    _______,  _______,  _______,  LBIND,    RBIND,     _______,            _______,  KC_MPRV,  KC_MPLY,  KC_MNXT,  _______,  KC_MUTE,
                                             _______,   _______,  _______,  _______,  _______
   ),
   
   [_FN] = LAYOUT_reviung41(
-    XXXXXXX,   XXXXXXX, LEFT,     RIGHT,    XXXXXXX,   XXXXXXX,            XXXXXXX,  KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11, 
-    XXXXXXX,   XXXXXXX, LPIZZA,   RPIZZA,   XXXXXXX,   XXXXXXX,            XXXXXXX,  KC_F4,    KC_F5,    KC_F6,    KC_F12,   KC_F13, 
-    XXXXXXX,   XXXXXXX, LBIND,    RBIND,    XXXXXXX,   XXXXXXX,            XXXXXXX,  KC_F1,    KC_F2,    KC_F3,    KC_BSLS,  XXXXXXX,
+    _______,  _______,  _______,  _______,  _______,   _______,            _______,  KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11, 
+    _______,  _______,  _______,  _______,  _______,   _______,            _______,  KC_F4,    KC_F5,    KC_F6,    KC_F12,   KC_F13, 
+    _______,  _______,  _______,  _______,  _______,   _______,            _______,  KC_F1,    KC_F2,    KC_F3,    KC_BSLS,  _______,
                                             _______,   _______,  _______,  _______,  _______
   ),
 };

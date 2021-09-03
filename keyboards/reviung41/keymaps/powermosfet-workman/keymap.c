@@ -26,7 +26,11 @@ enum layer_names {
 #define ARROWS  MO(_ARROWS)
 #define FN MO(_FN)
 
-#define SPACE  LSFT_T(KC_SPC)
+#define SPACE  LSFT_T(KC_SPACE)
+#define A_TAB  LALT_T(KC_TAB)
+#define G_ESC  LGUI_T(KC_ESCAPE)
+#define A_BSPC RALT_T(KC_BSPACE)
+#define G_ENT  RGUI_T(KC_ENTER)
 
 enum custom_keycodes {
     LEFT = SAFE_RANGE,
@@ -91,11 +95,11 @@ const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_reviung41(
-    KC_TAB,   KC_Q,     KC_D,     KC_R,     KC_W,      KC_B,               KC_J,     KC_F,     KC_U,     KC_P,     XXXXXXX,  KC_BSPC,
-    KC_ESC,   KC_A,     KC_S,     KC_H,     KC_T,      KC_G,               KC_Y,     KC_N,     KC_E,     KC_O,     KC_I,     KC_ENT,
-    KC_LALT,  KC_Z,     KC_X,     KC_M,     KC_C,      KC_V,               KC_K,     KC_L,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_RALT,
+    A_TAB,    KC_Q,     KC_D,     KC_R,     KC_W,      KC_B,               KC_J,     KC_F,     KC_U,     KC_P,     XXXXXXX,  A_BSPC,  
+    G_ESC,    KC_A,     KC_S,     KC_H,     KC_T,      KC_G,               KC_Y,     KC_N,     KC_E,     KC_O,     KC_I,     G_ENT,  
+    KC_LCTL,  KC_Z,     KC_X,     KC_M,     KC_C,      KC_V,               KC_K,     KC_L,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_RCTL,
 
-                                  KC_RGUI,        SYMBOLS,       SPACE,         ARROWS,        KC_LCTL
+                                  KC_TAB,         SYMBOLS,       SPACE,         ARROWS,        XXXXXXX
   ),
   
   [_SYMBOLS] = LAYOUT_reviung41(

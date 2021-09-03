@@ -31,6 +31,9 @@ enum layer_names {
 #define G_ESC  LGUI_T(KC_ESCAPE)
 #define A_BSPC RALT_T(KC_BSPACE)
 #define G_ENT  RGUI_T(KC_ENTER)
+#define NOR_AA RALT(KC_W)
+#define NOR_OE RALT(KC_L)
+#define NOR_AE RALT(KC_Z)
 
 enum custom_keycodes {
     LEFT = SAFE_RANGE,
@@ -111,9 +114,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   
   [_ARROWS] = LAYOUT_reviung41(
-    _______,  _______,  _______,  LEFT,     RIGHT,     _______,            KC_HOME,  KC_PGUP,  KC_UP,    KC_PGDN,  KC_END,   KC_VOLU,
-    _______,  _______,  _______,  LPIZZA,   RPIZZA,    _______,            KC_INS,   KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_DEL,   KC_VOLD,
-    _______,  _______,  _______,  LBIND,    RBIND,     _______,            _______,  KC_MPRV,  KC_MPLY,  KC_MNXT,  _______,  KC_MUTE,
+    _______,  _______,  NOR_AA,   LEFT,     RIGHT,     _______,            KC_HOME,  KC_PGUP,  KC_UP,    KC_PGDN,  KC_END,   KC_VOLU,
+    _______,  _______,  NOR_OE,   LPIZZA,   RPIZZA,    _______,            KC_INS,   KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_DEL,   KC_VOLD,
+    _______,  _______,  NOR_AE,   LBIND,    RBIND,     _______,            _______,  KC_MPRV,  KC_MPLY,  KC_MNXT,  _______,  KC_MUTE,
 
                                   _______,        _______,       _______,       _______,       _______
   ),

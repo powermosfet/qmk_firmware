@@ -229,9 +229,11 @@ layer_state_t default_layer_state_set_user(layer_state_t state) {
 layer_state_t layer_state_set_user(layer_state_t state) {
     state = update_tri_layer_state(state, _SYMBOLS, _ARROWS, _FN);
 
-    rgblight_set_layer_state(1, layer_state_cmp(state, _SYMBOLS));
-    rgblight_set_layer_state(2, layer_state_cmp(state, _ARROWS));
-    rgblight_set_layer_state(3, layer_state_cmp(state, _FN));
+    rgblight_set_layer_state(1, layer_state_cmp(state, _NOR));
+    rgblight_set_layer_state(2, layer_state_cmp(state, _TMUX));
+    rgblight_set_layer_state(3, layer_state_cmp(state, _SYMBOLS));
+    rgblight_set_layer_state(4, layer_state_cmp(state, _ARROWS));
+    rgblight_set_layer_state(5, layer_state_cmp(state, _FN));
 
     return state;
 }

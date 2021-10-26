@@ -24,22 +24,23 @@ enum layer_names {
     _FN
 };
 
-#define SYMBOLS  MO(_SYMBOLS)
-#define ARROWS   MO(_ARROWS)
+#define SYMBOLS  TT(_SYMBOLS)
+#define ARROWS   TT(_ARROWS)
 #define FN       MO(_FN)
 #define NOR      MO(_NOR)
 #define TMUX     MO(_TMUX)
 
-#define SPACE   LSFT_T(KC_SPACE)
-#define A_TAB   LALT_T(KC_TAB)
-#define G_ESC   LGUI_T(KC_ESCAPE)
-#define A_BSPC  RALT_T(KC_BSPACE)
-#define G_ENT   RGUI_T(KC_ENTER)
-#define NOR_AA  RALT(KC_W)
-#define NOR_OE  RALT(KC_L)
-#define NOR_AE  RALT(KC_Z)
-#define SH_Z    LSFT_T(KC_Z)
-#define SH_SLSH LSFT_T(KC_SLSH)
+#define SPACE    LSFT_T(KC_SPACE)
+#define A_TAB    LALT_T(KC_TAB)
+#define G_ESC    LGUI_T(KC_ESCAPE)
+#define A_BSPC   RALT_T(KC_BSPACE)
+#define G_ENT    RGUI_T(KC_ENTER)
+#define NOR_AA   RALT(KC_W)
+#define NOR_OE   RALT(KC_L)
+#define NOR_AE   RALT(KC_Z)
+#define SH_Z     LSFT_T(KC_Z)
+#define SH_SLSH  LSFT_T(KC_SLSH)
+#define AMETHYST LSFT(KC_LALT)
 
 enum custom_keycodes {
     LEFT = SAFE_RANGE,
@@ -171,7 +172,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     G_ESC,    KC_A,     KC_S,     KC_H,     KC_T,      KC_G,               KC_Y,     KC_N,     KC_E,     KC_O,     KC_I,     G_ENT,  
     KC_LCTL,  SH_Z,     KC_X,     KC_M,     KC_C,      KC_V,               KC_K,     KC_L,     KC_COMM,  KC_DOT,   SH_SLSH,  KC_RCTL,
 
-                                  XXXXXXX,        SYMBOLS,       KC_SPACE,      ARROWS,        TMUX    
+                                  AMETHYST,       SYMBOLS,       KC_SPACE,      ARROWS,        TMUX    
   ),
   
   [_NOR] = LAYOUT_reviung41(
@@ -191,8 +192,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   
   [_SYMBOLS] = LAYOUT_reviung41(
-    KC_HASH,  KC_EXLM,  KC_AT,    KC_LCBR,  KC_RCBR,   KC_GRAVE,           KC_QUOT,  KC_7,     KC_8,     KC_9,     KC_PAST,  KC_SCLN,
-    _______,  KC_AMPR,  KC_DLR,   KC_LPRN,  KC_RPRN,   KC_PIPE,            KC_COLN,  KC_4,     KC_5,     KC_6,     KC_PPLS,  KC_MINS,
+    KC_HASH,  KC_EXLM,  KC_AT,    KC_LCBR,  KC_RCBR,   KC_GRAVE,           KC_QUOT,  KC_7,     KC_8,     KC_9,     KC_PAST,  _______,
+    KC_SCLN,  KC_AMPR,  KC_DLR,   KC_LPRN,  KC_RPRN,   KC_PIPE,            KC_COLN,  KC_4,     KC_5,     KC_6,     KC_PPLS,  KC_MINS,
     _______,  KC_PERC,  KC_CIRC,  KC_LBRC,  KC_RBRC,   KC_TILD,            KC_DQUO,  KC_1,     KC_2,     KC_3,     _______,  KC_EQL,
 
                                   _______,        _______,       KC_BSPC,       _______,       KC_0  

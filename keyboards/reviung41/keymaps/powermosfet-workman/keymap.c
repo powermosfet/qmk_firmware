@@ -39,6 +39,7 @@ enum layer_names {
 #define NOR_OE   RALT(KC_L)
 #define NOR_AE   RALT(KC_Z)
 #define SH_Z     LSFT_T(KC_Z)
+#define SH_Q     LSFT_T(KC_Q)
 #define SH_SLSH  LSFT_T(KC_SLSH)
 #define AMETHYST LSFT(KC_LALT)
 
@@ -49,17 +50,8 @@ enum custom_keycodes {
     RPIZZA,
     LBIND,
     RBIND,
-    TMUX_J,
-    TMUX_P,
-    TMUX_A,
-    TMUX_S,
-    TMUX_H,
-    TMUX_N,
-    TMUX_O,
-    TMUX_K,
-    TMUX_L,
-    TMUX_C,
-    TMUX_X,
+    FATLEFT,
+    FATRGHT
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -81,56 +73,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             SEND_STRING("|>");
             break;
 
-        case RBIND:
+        case LBIND:
             SEND_STRING("=<<");
             break;
 
-        case LBIND:
+        case RBIND:
             SEND_STRING(">>=");
             break;
 
-        case TMUX_J:
-            SEND_STRING(SS_LCTL("a") "j");
+        case FATLEFT:
+            SEND_STRING("<=");
             break;
 
-        case TMUX_P:
-            SEND_STRING(SS_LCTL("a") "p");
-            break;
-
-        case TMUX_A:
-            SEND_STRING(SS_LCTL("a") "a");
-            break;
-
-        case TMUX_S:
-            SEND_STRING(SS_LCTL("a") "s");
-            break;
-
-        case TMUX_H:
-            SEND_STRING(SS_LCTL("a") "h");
-            break;
-
-        case TMUX_N:
-            SEND_STRING(SS_LCTL("a") "n");
-            break;
-
-        case TMUX_O:
-            SEND_STRING(SS_LCTL("a") "o");
-            break;
-
-        case TMUX_K:
-            SEND_STRING(SS_LCTL("a") "k");
-            break;
-
-        case TMUX_L:
-            SEND_STRING(SS_LCTL("a") "l");
-            break;
-
-        case TMUX_C:
-            SEND_STRING(SS_LCTL("a") "c");
-            break;
-
-        case TMUX_X:
-            SEND_STRING(SS_LCTL("a") "x");
+        case FATRGHT:
+            SEND_STRING("=>");
             break;
         }
     }
@@ -143,9 +99,6 @@ const rgblight_segment_t PROGMEM rgb_base[] = RGBLIGHT_LAYER_SEGMENTS(
 );
 const rgblight_segment_t PROGMEM rgb_nor[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, 11, 0, 0, 50}
-);
-const rgblight_segment_t PROGMEM rgb_tmux[] = RGBLIGHT_LAYER_SEGMENTS(
-    {10, 1, HSV_BLUE}
 );
 const rgblight_segment_t PROGMEM rgb_symbols[] = RGBLIGHT_LAYER_SEGMENTS(
     {10, 1, HSV_CYAN}
@@ -160,7 +113,6 @@ const rgblight_segment_t PROGMEM rgb_fn[] = RGBLIGHT_LAYER_SEGMENTS(
 const rgblight_segment_t* const PROGMEM rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     rgb_base,
     rgb_nor,
-    rgb_tmux,
     rgb_symbols,
     rgb_arrows,
     rgb_fn
@@ -168,11 +120,11 @@ const rgblight_segment_t* const PROGMEM rgb_layers[] = RGBLIGHT_LAYERS_LIST(
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_reviung41(
-    A_TAB,    KC_Q,     KC_D,     KC_R,     KC_W,      KC_B,               KC_J,     KC_F,     KC_U,     KC_P,     NOR,      A_BSPC,  
+    A_TAB,    SH_Q,     KC_D,     KC_R,     KC_W,      KC_B,               KC_J,     KC_F,     KC_U,     KC_P,     NOR,      A_BSPC,  
     G_ESC,    KC_A,     KC_S,     KC_H,     KC_T,      KC_G,               KC_Y,     KC_N,     KC_E,     KC_O,     KC_I,     G_ENT,  
     KC_LCTL,  SH_Z,     KC_X,     KC_M,     KC_C,      KC_V,               KC_K,     KC_L,     KC_COMM,  KC_DOT,   SH_SLSH,  KC_RCTL,
 
-                                  AMETHYST,       SYMBOLS,       KC_SPACE,      ARROWS,        TMUX    
+                                  _______,       SYMBOLS,       KC_SPACE,      ARROWS,        _______    
   ),
   
   [_NOR] = LAYOUT_reviung41(
@@ -183,24 +135,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                   _______,       _______,        _______,       _______,       _______
   ),
   
-  [_TMUX] = LAYOUT_reviung41(
-    _______,  _______,  _______,  _______,  _______,   _______,            TMUX_J,   _______,  _______,  TMUX_P,   _______,  _______,
-    _______,  TMUX_A,   TMUX_S,   TMUX_H,   _______,   _______,            _______,  TMUX_N,   _______,  TMUX_O,   _______,  _______,
-    _______,  _______,  TMUX_X,   _______,  TMUX_C,    _______,            TMUX_K,   TMUX_L,   _______,  _______,  _______,  _______,
-
-                                  _______,       _______,        _______,       _______,       _______
-  ),
-  
   [_SYMBOLS] = LAYOUT_reviung41(
     KC_HASH,  KC_EXLM,  KC_AT,    KC_LCBR,  KC_RCBR,   KC_GRAVE,           KC_QUOT,  KC_7,     KC_8,     KC_9,     KC_PAST,  _______,
     KC_SCLN,  KC_AMPR,  KC_DLR,   KC_LPRN,  KC_RPRN,   KC_PIPE,            KC_COLN,  KC_4,     KC_5,     KC_6,     KC_PPLS,  KC_MINS,
-    _______,  KC_PERC,  KC_CIRC,  KC_LBRC,  KC_RBRC,   KC_TILD,            KC_DQUO,  KC_1,     KC_2,     KC_3,     _______,  KC_EQL,
+    _______,  KC_PERC,  KC_CIRC,  KC_LBRC,  KC_RBRC,   KC_TILD,            KC_DQUO,  KC_1,     KC_2,     KC_3,     KC_0,     KC_EQL,
 
-                                  _______,        _______,       KC_BSPC,       _______,       KC_0  
+                                  _______,        _______,       KC_BSPC,       _______,       _______  
   ),
   
   [_ARROWS] = LAYOUT_reviung41(
-    _______,  _______,  _______,  LEFT,     RIGHT,     _______,            KC_HOME,  KC_PGUP,  KC_UP,    KC_PGDN,  KC_END,   KC_VOLU,
+    _______,  _______,  FATLEFT,  LEFT,     RIGHT,     FATRGHT,            KC_HOME,  KC_PGUP,  KC_UP,    KC_PGDN,  KC_END,   KC_VOLU,
     _______,  _______,  _______,  LPIZZA,   RPIZZA,    _______,            KC_INS,   KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_DEL,   KC_VOLD,
     _______,  _______,  _______,  LBIND,    RBIND,     _______,            _______,  KC_MPRV,  KC_MPLY,  KC_MNXT,  _______,  KC_MUTE,
 
@@ -231,10 +175,9 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     state = update_tri_layer_state(state, _SYMBOLS, _ARROWS, _FN);
 
     rgblight_set_layer_state(1, layer_state_cmp(state, _NOR));
-    rgblight_set_layer_state(2, layer_state_cmp(state, _TMUX));
-    rgblight_set_layer_state(3, layer_state_cmp(state, _SYMBOLS));
-    rgblight_set_layer_state(4, layer_state_cmp(state, _ARROWS));
-    rgblight_set_layer_state(5, layer_state_cmp(state, _FN));
+    rgblight_set_layer_state(2, layer_state_cmp(state, _SYMBOLS));
+    rgblight_set_layer_state(3, layer_state_cmp(state, _ARROWS));
+    rgblight_set_layer_state(4, layer_state_cmp(state, _FN));
 
     return state;
 }

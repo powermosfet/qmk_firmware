@@ -1,0 +1,2 @@
+#undef LED_SCROLL_LOCK_PIN
+#undef LED_COMPOSE_PIN

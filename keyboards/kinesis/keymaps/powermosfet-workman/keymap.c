@@ -117,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       KC_HOME,
                     SYM_BSP, KC_LGUI, KC_END ,
 
-    KC_F9  ,KC_F10 ,KC_F11 ,KC_F12 ,KC_PSCR ,KC_SLCK  ,KC_PAUS, KC_NO, RESET,
+    KC_F9  ,KC_F10 ,KC_F11 ,KC_F12 ,KC_PSCR ,KC_SLCK  ,KC_PAUS, TG(_NUMBERS), RESET,
 	KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0   , KC_MINS,
 	KC_J   ,KC_F   ,KC_U   ,KC_P   ,NOR    , KC_RALT,
 	KC_Y   ,KC_N   ,KC_E   ,KC_O   ,KC_I   , KC_RCTL,

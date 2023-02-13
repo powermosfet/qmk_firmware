@@ -17,10 +17,9 @@ enum layer_names {
 
 #define NOR      MO(_NOR)
 
-#define C_ESC    LCTL_T(KC_ESCAPE)
 #define S_Z      LSFT_T(KC_Z)
 #define S_SLASH  RSFT_T(KC_SLSH)
-#define SYM_BSP  LT(_SYMBOLS, KC_BSPACE)
+#define SYM_ESC  LT(_SYMBOLS, KC_ESCAPE)
 #define NUM_SPC  LT(_NUMBERS, KC_SPC)
 #define KZ_LOCK  LCTL(LGUI(KC_Q))
 #define NOR_AA   RALT(KC_W)
@@ -109,13 +108,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            KC_ESC,  KC_F1  ,KC_F2  ,KC_F3  ,KC_F4  ,KC_F5  ,KC_F6  ,KC_F7  ,KC_F8,
            KC_EQL,  KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5   ,
            KC_LALT, KC_Q   ,KC_D   ,KC_R   ,KC_W   ,KC_B   ,
-           C_ESC,   KC_A   ,KC_S   ,KC_H   ,KC_T   ,KC_G   ,
+           KC_LCTL, KC_A   ,KC_S   ,KC_H   ,KC_T   ,KC_G   ,
            KC_LGUI, S_Z    ,KC_X   ,KC_M   ,KC_C   ,KC_V   ,
                     _______,_______,_______,_______,
 
 			     KC_LCTL, KC_LALT,
                                       KC_HOME,
-                    SYM_BSP, KC_LGUI, KC_END ,
+                    SYM_ESC, KC_LGUI, KC_END ,
 
     KC_F9  ,KC_F10 ,KC_F11 ,KC_F12 ,KC_PSCR ,KC_SLCK  ,KC_PAUS, TG(_NUMBERS), RESET,
 	KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0   , KC_MINS,
@@ -172,7 +171,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
            _______,_______,
            _______,
-           _______,_______, _______
+           _______,KC_BSPACE,_______
     ),
 [_NUMBERS] = LAYOUT(
            _______, _______,_______,_______,_______,_______,_______,_______,_______,

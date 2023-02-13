@@ -33,7 +33,7 @@ enum layer_names {
 #define VIMMAN   TG(_VIMMAN)
 
 #define SYM_ESC  LT(_SYMBOLS, KC_ESCAPE)
-#define NUM_ENT  LT(_NUMBERS, KC_ENTER)
+#define NUM_SPC  LT(_NUMBERS, KC_SPC)
 #define A_TAB    LALT_T(KC_TAB)
 #define G_ESC    LGUI_T(KC_ESCAPE)
 #define A_BSPC   RALT_T(KC_BSPACE)
@@ -140,10 +140,10 @@ const rgblight_segment_t* const PROGMEM rgb_layers[] = RGBLIGHT_LAYERS_LIST(
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_reviung41(
     KC_LALT,  KC_Q,     KC_D,     KC_R,     KC_W,      KC_B,               KC_J,     KC_F,     KC_U,     KC_P,     NOR,      KC_RALT,
-    KC_LGUI,  KC_A,     KC_S,     KC_H,     KC_T,      KC_G,               KC_Y,     KC_N,     KC_E,     KC_O,     KC_I,     KC_RGUI,
-    KC_LCTL,  SH_Z,     KC_X,     KC_M,     KC_C,      KC_V,               KC_K,     KC_L,     KC_COMM,  KC_DOT,   SH_SLSH,  KC_RCTL,
+    KC_LCTL,  KC_A,     KC_S,     KC_H,     KC_T,      KC_G,               KC_Y,     KC_N,     KC_E,     KC_O,     KC_I,     KC_RCTL,
+    KC_LGUI,  SH_Z,     KC_X,     KC_M,     KC_C,      KC_V,               KC_K,     KC_L,     KC_COMM,  KC_DOT,   SH_SLSH,  KC_RGUI,
 
-                                  KC_COLN,        SYM_ESC,       KC_SPC,        NUM_ENT,       KC_MINS 
+                                  XXXXXXX,        SYM_ESC,       KC_ENT,        NUM_SPC,       XXXXXXX 
   ),
 
   [_QWER] = LAYOUT_reviung41(
@@ -151,7 +151,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,  KC_A,     KC_S,     KC_D,     KC_F,      KC_G,               KC_H,     KC_J,     KC_K,     KC_L,     NOR,      _______,
     _______,  SH_Z,     KC_X,     KC_C,     KC_V,      KC_B,               KC_N,     KC_M,     KC_COMM,  KC_DOT,   SH_SLSH,  _______,
 
-                                  KC_COLN,        SYM_ESC,       KC_SPC,        NUM_ENT,       KC_MINS 
+                                  _______,        _______,      _______,        _______,       _______ 
   ),
 
   [_VIMMAN] = LAYOUT_reviung41(
@@ -159,7 +159,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,  KC_A,     KC_S,     KC_E,     KC_T,      KC_G,               KC_H,     KC_J,     KC_K,     KC_L,     KC_I,     _______,
     _______,  SH_Z,     KC_X,     KC_M,     KC_C,      KC_V,               KC_U,     KC_N,     KC_COMM,  KC_DOT,   SH_SLSH,  _______,
 
-                                  KC_COLN,        SYM_ESC,       KC_SPC,        NUM_ENT,       KC_MINS 
+                                  _______,        _______,      _______,        _______,       _______ 
   ),
   
   [_NOR] = LAYOUT_reviung41(
@@ -181,9 +181,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NUMBERS] = LAYOUT_reviung41(
     _______,  KC_HOME,  KC_PGUP,  KC_UP,    KC_PGDN,   KC_END,             KC_EQL,   KC_7,     KC_8,     KC_9,     KC_PAST,  _______,
     _______,  KC_INS,   KC_LEFT,  KC_DOWN,  KC_RGHT,   KC_DEL,             KC_MINS,  KC_4,     KC_5,     KC_6,     KC_PLUS,  _______,
-    _______,  KC_VOLD,  KC_MPRV,  KC_MPLY,  KC_MNXT,   KC_VOLU,            KC_MUTE,  KC_1,     KC_2,     KC_3,     KC_0,     _______,
+    _______,  KC_VOLD,  KC_MPRV,  KC_MPLY,  KC_MNXT,   KC_VOLU,            KC_MUTE,  KC_1,     KC_2,     KC_3,     _______,  _______,
 
-                                  _______,        _______,       KC_TAB,        _______,       _______
+                                  _______,        _______,       KC_TAB,        _______,       KC_P0
   ),
   
   [_FN] = LAYOUT_reviung41(
